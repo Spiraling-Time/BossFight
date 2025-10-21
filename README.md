@@ -7,3 +7,6 @@ Devlog...
 
 Made you able to turn spaces red by moving through them, and place tiles with tile layer.
 <img width="1643" height="1065" alt="image" src="https://github.com/user-attachments/assets/ab0e5e59-fb66-4f74-97ae-fcb1acd4d0b5" />
+
+<img width="1617" height="931" alt="image" src="https://github.com/user-attachments/assets/51785d6a-2330-4b0e-9b46-2275443b8218" />
+When you slice tiles they can't be hit again (this will help with patgfidning trick later). They turn red. Pressing Z resets.
