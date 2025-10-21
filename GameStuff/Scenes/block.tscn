@@ -1,14 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxs3nbaep84c5"]
+[gd_scene load_steps=3 format=3 uid="uid://cxs3nbaep84c5"]
 
-[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://GameStuff/Assets/icon.svg" id="1_amqf8"]
 [ext_resource type="Script" uid="uid://cq6epv3cn6x0q" path="res://GameStuff/Code/block.gd" id="1_qjv1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsd7l"]
 size = Vector2(10, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8o1l4"]
-atlas = ExtResource("1_amqf8")
-region = Rect2(10, 10, 10, 10)
 
 [node name="Block" type="CharacterBody2D"]
 script = ExtResource("1_qjv1f")
@@ -16,5 +11,15 @@ script = ExtResource("1_qjv1f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fsd7l")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_8o1l4")
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
