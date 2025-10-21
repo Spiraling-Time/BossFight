@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8ulaoi7y6gw1" path="res://GameStuff/Code/detector.gd" id="1_wr4y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwmw3"]
-size = Vector2(10, 30)
+size = Vector2(10, 10)
 
 [node name="detector" type="Area2D"]
 script = ExtResource("1_wr4y4")
