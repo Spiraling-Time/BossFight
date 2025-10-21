@@ -10,3 +10,5 @@ script = ExtResource("1_go701")
 position = Vector2(566, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
