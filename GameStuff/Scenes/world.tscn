@@ -8,8 +8,8 @@
 script = ExtResource("1_go701")
 
 [node name="detector" parent="." instance=ExtResource("2_go701")]
-position = Vector2(566, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 5
 
 [node name="Monster" parent="." instance=ExtResource("3_8d1qx")]
