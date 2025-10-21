@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=4 uid="uid://dagq26duesgwy"]
+[gd_scene load_steps=3 format=4 uid="uid://dagq26duesgwy"]
 
+[ext_resource type="Script" uid="uid://gua8q24a1em8" path="res://GameStuff/Code/monster.gd" id="1_45clw"]
 [ext_resource type="PackedScene" uid="uid://cijstcay77arb" path="res://GameStuff/Scenes/Cubes.tscn" id="1_ax6e5"]
 
 [node name="Monster" type="Node2D"]
+script = ExtResource("1_45clw")
 
 [node name="Maps" type="Node2D" parent="."]
 
