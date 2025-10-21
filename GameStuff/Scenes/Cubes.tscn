@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cijstcay77arb"]
+
+[ext_resource type="PackedScene" uid="uid://cxs3nbaep84c5" path="res://GameStuff/Scenes/block.tscn" id="1_j8xv6"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mf806"]
+scenes/1/scene = ExtResource("1_j8xv6")
+
+[sub_resource type="TileSet" id="TileSet_i084v"]
+tile_size = Vector2i(10, 10)
+sources/0 = SubResource("TileSetScenesCollectionSource_mf806")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_i084v")

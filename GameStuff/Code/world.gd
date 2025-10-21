@@ -8,10 +8,12 @@ var size: int = 10
 var offset: Vector2 = Vector2(gridX*size/2, gridY*size/2)
 
 func _ready() -> void:
-	for i in range(gridX):
-		for j in range(gridY):
-			var newBlock = block.instantiate()
-			newBlock.position = Vector2(i*size,j*size)-offset
-			add_child(newBlock)
+	"""Create Grid:"""
+	#for i in range(gridX):
+		#for j in range(gridY):
+			#var newBlock = block.instantiate()
+			#newBlock.position = Vector2(i*size,j*size)-offset
+			#add_child(newBlock)
 			
 			
+	pass
