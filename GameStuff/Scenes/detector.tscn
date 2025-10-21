@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8ulaoi7y6gw1" path="res://GameStuff/Code/detector.gd" id="1_wr4y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwmw3"]
-size = Vector2(150, 150)
+size = Vector2(10, 30)
 
 [node name="detector" type="Area2D"]
 script = ExtResource("1_wr4y4")
@@ -11,3 +11,13 @@ script = ExtResource("1_wr4y4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uwmw3")
 debug_color = Color(0.74902, 0, 0, 0.419608)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

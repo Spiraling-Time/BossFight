@@ -9,5 +9,5 @@ scenes/1/scene = ExtResource("1_j8xv6")
 tile_size = Vector2i(10, 10)
 sources/0 = SubResource("TileSetScenesCollectionSource_mf806")
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="Collisions" type="TileMapLayer"]
 tile_set = SubResource("TileSet_i084v")
