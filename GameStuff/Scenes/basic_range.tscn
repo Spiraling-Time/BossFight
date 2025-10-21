@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwqn307vju06f"]
+
+[ext_resource type="PackedScene" uid="uid://dagq26duesgwy" path="res://GameStuff/Scenes/monster.tscn" id="1_s68o6"]
+
+[node name="basic range" instance=ExtResource("1_s68o6")]

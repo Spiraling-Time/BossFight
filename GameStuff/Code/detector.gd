@@ -7,6 +7,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	for bodies in get_overlapping_bodies():
 		if bodies.modulate != Color.RED:
+			bodies.visible = true
 			bodies.modulate = Color.RED
 	if Input.is_key_pressed(KEY_LEFT):
 		position.x -= 10
