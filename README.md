@@ -10,3 +10,5 @@ Made you able to turn spaces red by moving through them, and place tiles with ti
 
 <img width="1617" height="931" alt="image" src="https://github.com/user-attachments/assets/51785d6a-2330-4b0e-9b46-2275443b8218" />
 When you slice tiles they can't be hit again (this will help with pathfinding trick later). They turn red. Pressing Z resets.
+https://spiraling-time.itch.io/coming-soon
+
