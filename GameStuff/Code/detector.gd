@@ -9,6 +9,7 @@ func _physics_process(delta: float) -> void:
 		if bodies.modulate != Color.RED:
 			bodies.visible = true
 			bodies.modulate = Color.RED
+			bodies.set_collision_layer_value(1, false,)
 	if Input.is_key_pressed(KEY_LEFT):
 		position.x -= 10
 	elif Input.is_key_pressed(KEY_RIGHT):
