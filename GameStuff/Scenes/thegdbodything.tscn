@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2nqib7uwfgen"]
+
+[ext_resource type="PackedScene" uid="uid://ooym0nkxov86" path="res://GameStuff/Scenes/limb.tscn" id="1_o14id"]
+[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://GameStuff/Assets/icon.svg" id="2_ptdp5"]
+
+[node name="THEGDBODYTHING" instance=ExtResource("1_o14id")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites" index="0"]
+texture = ExtResource("2_ptdp5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprites" index="1"]
+position = Vector2(64, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ptdp5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprites" index="2"]
+position = Vector2(-64, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ptdp5")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprites" index="3"]
+position = Vector2(-64, -64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ptdp5")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprites" index="4"]
+position = Vector2(-64, -64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ptdp5")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprites" index="5"]
+position = Vector2(64, -64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ptdp5")

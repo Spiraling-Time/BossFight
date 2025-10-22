@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://ca3hwwmujq0tp"]
 
-[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://GameStuff/Assets/icon.svg" id="1_cyvoi"]
+[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://GameStuff/Assets/icon.svg" id="1_5no5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5chao"]
-texture = ExtResource("1_cyvoi")
-texture_region_size = Vector2i(2, 2)
+texture = ExtResource("1_5no5q")
+texture_region_size = Vector2i(1, 1)
 5:7/0 = 0
 5:8/0 = 0
 6:9/0 = 0
