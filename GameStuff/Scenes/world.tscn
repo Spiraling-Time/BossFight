@@ -13,12 +13,3 @@ script = ExtResource("1_go701")
 z_index = 5
 
 [node name="Monster" parent="." instance=ExtResource("3_8d1qx")]
-
-[node name="Monster2" parent="." instance=ExtResource("3_8d1qx")]
-position = Vector2(295, -45)
-
-[node name="Monster3" parent="." instance=ExtResource("3_8d1qx")]
-position = Vector2(-311, 162)
-
-[node name="Monster4" parent="." instance=ExtResource("3_8d1qx")]
-position = Vector2(-280, -191)
