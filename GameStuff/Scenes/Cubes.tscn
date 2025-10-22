@@ -6,7 +6,7 @@
 scenes/1/scene = ExtResource("1_j8xv6")
 
 [sub_resource type="TileSet" id="TileSet_i084v"]
-tile_size = Vector2i(10, 10)
+tile_size = Vector2i(2, 2)
 sources/0 = SubResource("TileSetScenesCollectionSource_mf806")
 
 [node name="Collisions" type="TileMapLayer"]
