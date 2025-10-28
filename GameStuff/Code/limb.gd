@@ -6,11 +6,8 @@ func _ready() -> void:
 	mon = ogMon.duplicate()
 	
 func _physics_process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_Z):
-		ogMon.queue_free()
-		var newMon = mon.duplicate()
-		add_child(newMon)
-		ogMon = newMon
+	pass
+
 
 
 func wounds_timeout():
@@ -18,3 +15,5 @@ func wounds_timeout():
 	var newMon = mon.duplicate()
 	add_child(newMon)
 	ogMon = newMon
+
+	

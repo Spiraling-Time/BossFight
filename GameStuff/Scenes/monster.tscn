@@ -12,4 +12,8 @@ script = ExtResource("1_45clw")
 wait_time = 5.0
 autostart = true
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+
 [connection signal="timeout" from="Check_Wounds" to="." method="_on_check_wounds_timeout"]
