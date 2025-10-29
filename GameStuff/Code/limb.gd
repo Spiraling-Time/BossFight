@@ -93,7 +93,7 @@ func _ready() -> void:
 	mon = ogMon.duplicate()
 	
 func _physics_process(delta: float) -> void:
-	if !entered:
+	if !ready_to_exit:
 		for i in range(AllSides.size()):
 			if AllSides[i].get_overlapping_areas().size() >= 1:
 				entered = true
@@ -121,9 +121,11 @@ func _physics_process(delta: float) -> void:
 					print("sliced!")
 					break
 			else:
-				entered = false#haven't tested this and line below
-				ready_to_exit = false
-				#pass
+				if AllSides[i].get_overlapping_areas().size() >= 1:
+					entered = false
+					ready_to_exit = false
+					print("still here!")
+					break
 func wounds_timeout():
 	#ogMon.queue_free()
 	#var newMon = mon.duplicate()
