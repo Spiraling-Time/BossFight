@@ -6,6 +6,8 @@
 size = Vector2(2, 2)
 
 [node name="detector" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_wr4y4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

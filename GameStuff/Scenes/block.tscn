@@ -6,6 +6,8 @@
 size = Vector2(2, 2)
 
 [node name="Block" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_qjv1f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
