@@ -2,6 +2,7 @@ extends Node2D
 var entered: bool = false
 var entered_from
 var ready_to_exit: bool = false
+var outside: bool = true
 var ogMon
 var mon
 var Side1
@@ -93,37 +94,33 @@ func _ready() -> void:
 	mon = ogMon.duplicate()
 	
 func _physics_process(delta: float) -> void:
-	if !entered:
-		for i in range(AllSides.size()):
-			if AllSides[i].get_overlapping_areas().size() >= 1:
-				entered = true
-				entered_from = "Side%d" % (i + 1)
-				print(AllSides[i].get_overlapping_areas())
-				break
-	if entered:
-		if !ready_to_exit:
-			if Inside.get_overlapping_areas().size() >= 1:
-				var stay:bool = false
-				for i in range(AllSides.size()):
-					if AllSides[i].get_overlapping_areas().size() >= 1: 
-						stay = true
+	for i in range(AllSides.size()):
+		if AllSides[i].get_overlapping_areas().size() >= 1:
+			entered = true
+			entered_from = "Side%d" % (i + 1)
+			outside = false
+			print(AllSides[i].get_overlapping_areas())
+			break
+		if !entered: outside = true
+	if !outside:
+		if entered:
+			if !ready_to_exit:
+				if Inside.get_overlapping_areas().size() >= 1:
+					var stay:bool = false
+					for i in range(AllSides.size()):
+						if AllSides[i].get_overlapping_areas().size() >= 1: 
+							stay = true
+							break
+					if !stay:
+						ready_to_exit = true
+						print("left")
+		if ready_to_exit:
+			for i in range(AllSides.size()):
+					if entered_from != "Side%d" % (i + 1) and AllSides[i].get_overlapping_areas().size() >= 1:
+						entered = false
+						ready_to_exit = false
+						print("sliced!")
 						break
-				if !stay:
-					ready_to_exit = true
-					print("left")
-		
-	if ready_to_exit:
-		for i in range(AllSides.size()):
-			if entered_from != "Side%d" % (i + 1):
-				if AllSides[i].get_overlapping_areas().size() >= 1:
-					entered = false
-					ready_to_exit = false
-					print("sliced!")
-					break
-			else:
-				entered = false#haven't tested this and line below
-				ready_to_exit = false
-				#pass
 func wounds_timeout():
 	#ogMon.queue_free()
 	#var newMon = mon.duplicate()
