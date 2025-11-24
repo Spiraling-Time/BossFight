@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbscyc3spudsy"]
+
+[ext_resource type="Script" uid="uid://gua8q24a1em8" path="res://GameStuff/Code/monster.gd" id="1_4km8g"]
+[ext_resource type="PackedScene" uid="uid://d2nqib7uwfgen" path="res://GameStuff/Scenes/thegdbodything.tscn" id="2_afmgh"]
+
+[node name="Monster" type="Node2D"]
+script = ExtResource("1_4km8g")
+
+[node name="THEGDBODYTHING" parent="." instance=ExtResource("2_afmgh")]
+
+[node name="Check_Wounds" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Check_Wounds" to="." method="_on_check_wounds_timeout"]
