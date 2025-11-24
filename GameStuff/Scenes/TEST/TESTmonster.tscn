@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dks5cwkddf0xj"]
+
+[ext_resource type="Script" uid="uid://gua8q24a1em8" path="res://GameStuff/Code/monster.gd" id="1_5nxux"]
+[ext_resource type="Texture2D" uid="uid://cjoqyp06cyxvy" path="res://GameStuff/Assets/Poseidon.png" id="2_5nxux"]
+
+[node name="Monster" type="Node2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_5nxux")
+
+[node name="Check_Wounds" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5nxux")
+
+[node name="pants" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pants"]
+polygon = PackedVector2Array(-216, 429, -220, 366, -231, 343, -211, 283, -216, 227, -232, 163, -193, 86, -173, 89, -185, 106, -160, 157, -113, 169, -89, 193, -42, 196, 1, 187, 7, 155, 42, 102, 58, 207, 55, 278, 68, 303, 67, 322, 58, 348, 95, 441, 90, 453, 30, 470, -48, 457, -42, 409, -81, 335, -119, 332, -109, 446, -112, 455, -218, 440)
+
+[node name="beard" type="Area2D" parent="."]
+
+[node name="beard" type="CollisionPolygon2D" parent="beard"]
+polygon = PackedVector2Array(-164, -130, -114, -99, -4, -100, 35, -154, 26, -266, 23, -286, 46, -313, 33, -377, 1, -442, -40, -459, -94, -459, -140, -428, -171, -338, -221, -316, -211, -290, -152, -284)
+
+[node name="trident" type="Area2D" parent="."]
+
+[node name="trident" type="CollisionPolygon2D" parent="trident"]
+polygon = PackedVector2Array(385, -51, 395, -44, 411, -75, 392, -213, 361, -295, 323, -366, 242, -501, 183, -589, 197, -684, 173, -680, 53, -792, 28, -780, 134, -674, 133, -651, 104, -651, -11, -717, -24, -684, 68, -628, 78, -598, 36, -602, -23, -632, -54, -637, -40, -620, 32, -561, 48, -565, 92, -537, 143, -579, 159, -580, 311, -330, 362, -216, 391, -82)
+
+[node name="body" type="Area2D" parent="."]
+
+[node name="leftleg" type="CollisionPolygon2D" parent="body"]
+polygon = PackedVector2Array(-217, 442, -217, 524, -229, 589, -284, 627, -313, 633, -325, 646, -308, 661, -195, 674, -141, 627, -140, 615, -113, 457)
+
+[node name="rightleg" type="CollisionPolygon2D" parent="body"]
+polygon = PackedVector2Array(-44, 463, -12, 468, -5, 535, 1, 566, -45, 604, -47, 625, -18, 675, 24, 714, 77, 705, 85, 670, 38, 637, 87, 604, 123, 554, 118, 489, 88, 454, 29, 471, -47, 454)
+
+[node name="torso" type="CollisionPolygon2D" parent="body"]
+polygon = PackedVector2Array(-193, 85, -173, 89, -186, 107, -161, 156, -113, 172, -90, 193, -40, 195, 2, 188, 8, 154, 40, 103, 45, 63, 37, -15, 25, -50, 35, -77, 15, -104, 37, -148, 57, -149, 99, -136, 153, -156, 281, -374, 238, -468, 197, -372, 143, -296, 113, -306, 84, -287, 78, -277, 39, -266, 26, -266, 34, -153, -2, -98, -116, -101, -163, -132, -149, -286, -202, -290, -315, -174, -349, -155, -381, -114, -398, -103, -429, 70, -373, 96, -370, 128, -362, 129, -348, 103, -278, 79, -326, 24, -284, -70, -240, -77, -231, -106, -209, -104, -193, -145)
+
+[node name="hand" type="CollisionPolygon2D" parent="body"]
+polygon = PackedVector2Array(252, -481, 266, -492, 294, -488, 308, -468, 301, -442, 304, -410, 300, -403)
+
+[node name="face" type="CollisionPolygon2D" parent="body"]
+polygon = PackedVector2Array(-142, -308, -153, -317, -130, -358, -118, -414, -90, -415, -51, -425, -21, -415, 0, -383, -1, -342, -4, -292, -25, -281, -41, -290, -50, -274, -76, -280, -117, -291)
+
+[connection signal="timeout" from="Check_Wounds" to="." method="_on_check_wounds_timeout"]

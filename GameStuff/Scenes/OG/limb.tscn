@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://ooym0nkxov86"]
 
 [ext_resource type="Script" uid="uid://c7ab4jsghdtdy" path="res://GameStuff/Code/limb.gd" id="1_3desm"]
-[ext_resource type="PackedScene" uid="uid://cijstcay77arb" path="res://GameStuff/Scenes/Cubes.tscn" id="1_qxhd5"]
+[ext_resource type="PackedScene" uid="uid://cijstcay77arb" path="res://GameStuff/Scenes/OG/Cubes.tscn" id="1_qxhd5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sakw"]
 size = Vector2(64, 2)

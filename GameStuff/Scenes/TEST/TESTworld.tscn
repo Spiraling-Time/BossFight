@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs4onl0qns2gw"]
+
+[ext_resource type="Script" uid="uid://b3yuulkaophow" path="res://GameStuff/Code/world.gd" id="1_qvipf"]
+[ext_resource type="PackedScene" uid="uid://cqujea80g70kc" path="res://GameStuff/Scenes/OG/detector.tscn" id="2_urtjj"]
+[ext_resource type="PackedScene" uid="uid://dks5cwkddf0xj" path="res://GameStuff/Scenes/TEST/TESTmonster.tscn" id="3_qvipf"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_qvipf")
+
+[node name="detector" parent="." instance=ExtResource("2_urtjj")]
+z_index = 2
+position = Vector2(847, -73)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 5
+
+[node name="Monster" parent="." instance=ExtResource("3_qvipf")]

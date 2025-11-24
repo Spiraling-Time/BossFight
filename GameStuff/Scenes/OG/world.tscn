@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d312v0b1qeanu"]
 
 [ext_resource type="Script" uid="uid://b3yuulkaophow" path="res://GameStuff/Code/world.gd" id="1_go701"]
-[ext_resource type="PackedScene" uid="uid://cqujea80g70kc" path="res://GameStuff/Scenes/detector.tscn" id="2_go701"]
-[ext_resource type="PackedScene" uid="uid://dagq26duesgwy" path="res://GameStuff/Scenes/monster.tscn" id="3_8d1qx"]
+[ext_resource type="PackedScene" uid="uid://cqujea80g70kc" path="res://GameStuff/Scenes/OG/detector.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://dagq26duesgwy" path="res://GameStuff/Scenes/OG/monster.tscn" id="3_8d1qx"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_go701")
