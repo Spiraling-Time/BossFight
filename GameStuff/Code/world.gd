@@ -14,12 +14,14 @@ extends Node2D
 	#pass
 #BELOW TES T
 var points: Array = []
+var caolor: Array = []
 @onready var p = $detect
 func _draw() -> void:
 	for i in range(points.size()):
-		draw_circle(points[i], 2.0, Color.RED, true)
+		draw_circle(points[i], 1.0, caolor[i], true)
 
-func add():
-	if !points.has(p.global_position):
-		points.append(p.global_position)
+func add(pos, color):
+	if !points.has(pos):
+		points.append(pos)
+		caolor.append(color)
 		queue_redraw()
