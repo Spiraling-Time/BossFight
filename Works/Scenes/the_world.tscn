@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://chilednwy7rcm"]
+
+[ext_resource type="Script" uid="uid://c316ms5jws2uh" path="res://Works/Code/the_world.gd" id="1_027bo"]
+[ext_resource type="PackedScene" uid="uid://chd1wdifvggjw" path="res://Works/Scenes/player.tscn" id="2_kp6ox"]
+
+[node name="theWORLD" type="Node2D"]
+script = ExtResource("1_027bo")
+
+[node name="Player" parent="." instance=ExtResource("2_kp6ox")]
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(37, -38, -38, -36, -70, 15, -26, -7, 64, -24)

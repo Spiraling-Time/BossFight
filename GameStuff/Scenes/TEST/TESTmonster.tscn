@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dks5cwkddf0xj"]
 
 [ext_resource type="Script" uid="uid://gua8q24a1em8" path="res://GameStuff/Code/monster.gd" id="1_5nxux"]
-[ext_resource type="Texture2D" uid="uid://cjoqyp06cyxvy" path="res://GameStuff/Assets/Poseidon.png" id="2_5nxux"]
+[ext_resource type="Texture2D" uid="uid://cjoqyp06cyxvy" path="res://Works/Assets/Poseidon.png" id="2_5nxux"]
 
 [node name="Monster" type="Node2D"]
 scale = Vector2(0.6, 0.6)

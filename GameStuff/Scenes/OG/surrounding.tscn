@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ca3hwwmujq0tp"]
 
-[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://GameStuff/Assets/icon.svg" id="1_5no5q"]
+[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://Works/Assets/icon.svg" id="1_5no5q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_5no5q"]
 vertices = PackedVector2Array(1, 1, -1, 1, -1, -1, 1, -1)

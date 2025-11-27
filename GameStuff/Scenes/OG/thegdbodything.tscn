@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2nqib7uwfgen"]
 
 [ext_resource type="PackedScene" uid="uid://ooym0nkxov86" path="res://GameStuff/Scenes/OG/limb.tscn" id="1_o14id"]
-[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://GameStuff/Assets/icon.svg" id="2_ptdp5"]
+[ext_resource type="Texture2D" uid="uid://brxndpruawb6r" path="res://Works/Assets/icon.svg" id="2_ptdp5"]
 
 [node name="THEGDBODYTHING" instance=ExtResource("1_o14id")]
 
