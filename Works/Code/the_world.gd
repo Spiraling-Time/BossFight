@@ -10,8 +10,6 @@ var points: Array = []
 func _ready() -> void:
 	randomize()
 	generate_stars()
-
-					
 func _draw() -> void:
 	for i in range(points.size()):
 		draw_circle(points[i][0], points[i][1], points[i][2])
@@ -26,21 +24,6 @@ func generate_stars():
 					if Geometry2D.is_point_in_polygon(po, poly1.polygon): points.append([po, starSize, Color.BLUE, true])
 					elif Geometry2D.is_point_in_polygon(po, poly2.polygon): points.append([po, starSize, Color(randi_range(5,10)/10.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0, 1.0), true])
 	timer.start()
-
-func _process(delta: float) -> void:
-	#for i in range(4, 0, -1):
-		##await  get_tree().process_frame
-		#for j in range(points.size()):
-			#points[j][1]  += 0.2
-			#print(points[j][1])
-			#queue_redraw()
-	#for i in range(4, 0, -1):
-		##await  get_tree().process_frame
-		#for j in range(points.size()):
-			#points[j][1]  -= 0.2
-			#queue_redraw()
-	pass
-
 func _on_timer_timeout() -> void:
 	for j in range(points.size()):
 		if  points[j][3]:
@@ -55,8 +38,8 @@ func _on_timer_timeout() -> void:
 				points[j][3] = true			
 		queue_redraw()
 	timer.start()
-	
-	
+
+#RESET
 	#points.clear()
 	#generate_stars()
 	#queue_redraw()
