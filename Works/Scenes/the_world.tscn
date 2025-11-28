@@ -14,3 +14,8 @@ polygon = PackedVector2Array(-960, 540, 960, 540, 960, -540, -960, -540)
 [node name="Polygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2(457, 248)
 polygon = PackedVector2Array(-780, -29, -371, 10, -178, -45, -960, -540)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
