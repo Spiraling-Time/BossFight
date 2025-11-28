@@ -23,10 +23,8 @@ func generate_stars():
 				if j % size == 0:
 					var po = Vector2(i*size,j*size)-offset +Vector2(randi_range(-10, 10), randi_range(-10, 10))#Vector2(i*size,j*size)-offset + Vector2(randi_range(-1*(size*10), (size*10)), randi_range(-1*(size*10), (size*10)))
 					var starSize = randi_range(-1, 1)+size/2
-					if Geometry2D.is_point_in_polygon(po, poly1.polygon):
-						points.append([po, starSize, Color(randi_range(5,10)/10.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0, 1.0)])
-					elif Geometry2D.is_point_in_polygon(po, poly2.polygon):
-						points.append([po, starSize, Color.BLUE])
+					if Geometry2D.is_point_in_polygon(po, poly1.polygon): points.append([po, starSize, Color.BLUE, true])
+					elif Geometry2D.is_point_in_polygon(po, poly2.polygon): points.append([po, starSize, Color(randi_range(5,10)/10.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0, 1.0), true])
 	timer.start()
 
 func _process(delta: float) -> void:
@@ -45,9 +43,16 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	for j in range(points.size()):
-		points[j][1] += randi_range(-10,10)/10.0
-		if points[j][1] < 0.1: points[j][1] = 0.1
-		elif points[j][1] > 4.0: points[j][1] = 4.0
+		if  points[j][3]:
+			points[j][1] += 0.1
+			if points[j][1] >= 4.0:
+				points[j][1] = 4.0
+				points[j][3] = false
+		else:
+			points[j][1] -= 0.1
+			if points[j][1] <= 1.0:
+				points[j][1] = 1.0
+				points[j][3] = true			
 		queue_redraw()
 	timer.start()
 	

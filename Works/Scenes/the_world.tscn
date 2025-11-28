@@ -19,4 +19,6 @@ polygon = PackedVector2Array(-780, -29, -371, 10, -178, -45, -960, -540)
 wait_time = 0.009999999999999998
 one_shot = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
