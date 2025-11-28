@@ -16,7 +16,6 @@ position = Vector2(457, 248)
 polygon = PackedVector2Array(-780, -29, -371, 10, -178, -45, -960, -540)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.009999999999999998
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
