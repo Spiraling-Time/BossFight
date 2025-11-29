@@ -1,24 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://chilednwy7rcm"]
+[gd_scene load_steps=4 format=3 uid="uid://chilednwy7rcm"]
 
 [ext_resource type="Script" uid="uid://c316ms5jws2uh" path="res://Works/Code/the_world.gd" id="1_027bo"]
 [ext_resource type="PackedScene" uid="uid://chd1wdifvggjw" path="res://Works/Scenes/player.tscn" id="2_kp6ox"]
+[ext_resource type="PackedScene" uid="uid://dks5cwkddf0xj" path="res://GameStuff/Scenes/TEST/TESTmonster.tscn" id="3_ychxk"]
 
 [node name="theWORLD" type="Node2D"]
 script = ExtResource("1_027bo")
 
 [node name="Player" parent="." instance=ExtResource("2_kp6ox")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-960, 540, 960, 540, 960, -540, -960, -540)
 
-[node name="Polygon2D2" type="CollisionPolygon2D" parent="."]
-position = Vector2(457, 248)
-polygon = PackedVector2Array(-780, -29, -371, 10, -178, -45, -960, -540)
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Monster" parent="." instance=ExtResource("3_ychxk")]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="Monster" index="1"]
+visible = false
+z_index = 1
+scale = Vector2(0.65, 0.65)
+
+[node name="CollisionPolygon2D" parent="Monster/pants" index="0"]
+polygon = PackedVector2Array(-137, 280, -76, 291, -80, 207, -44, 217, -22, 296, 25, 300, 59, 291, 29, 217, 38, 186, 25, 167, 34, 126, 30, 83, 2, 115, -25, 133, -56, 129, -94, 104, -106, 101, -121, 65, -115, 61, -116, 55, -126, 56, -134, 71, -141, 109, -121, 135, -136, 150, -138, 195, -148, 223, -141, 257)
+
+[node name="beard" parent="Monster/beard" index="0"]
+polygon = PackedVector2Array(-125, -207, -144, -204, -139, -190, -116, -194, -94, -188, -90, -181, -105, -155, -102, -128, -100, -111, -104, -87, -80, -71, -68, -64, -46, -67, -17, -71, -5, -75, 11, -81, 24, -104, 21, -143, 9, -179, 24, -206, 22, -227, 5, -270, -7, -288, -31, -298, -62, -299, -82, -277, -100, -252, -109, -225)
+
+[node name="trident" parent="Monster/trident" index="0"]
+polygon = PackedVector2Array(152, -295, 88, -368, 57, -342, -34, -411, 50, -378, 63, -392, -14, -463, 79, -416, 93, -433, 22, -509, 111, -443, 122, -426, 106, -384, 240, -177, 267, -47, 260, -28, 256, -43, 255, -61, 228, -164, 186, -243)
+
+[node name="leftleg" parent="Monster/body" index="0"]
+polygon = PackedVector2Array(-139, 284, -140, 380, -190, 414, -199, 413, -208, 420, -195, 430, -125, 436, -91, 410, -75, 301)
+
+[node name="rightleg" parent="Monster/body" index="1"]
+polygon = PackedVector2Array(-29, 407, 11, 463, 46, 454, 55, 437, 26, 412, 57, 385, 71, 367, 77, 322, 53, 293, -8, 304, 4, 370)
+
+[node name="torso" parent="Monster/body" index="2"]
+polygon = PackedVector2Array(-119, 54, -90, 111, -27, 131, 20, 84, 17, -74, 25, -95, 83, -95, 96, -103, 162, -197, 162, -223, 183, -243, 153, -295, 127, -230, 96, -203, 66, -201, 57, -181, 35, -177, 28, -167, 13, -172, -99, -180, -118, -182, -136, -179, -154, -162, -256, -72, -265, -50, -263, -22, -268, 3, -280, 40, -241, 67, -240, 84, -236, 85, -235, 71, -198, 56, -189, 42, -194, 30, -207, 18, -188, -31, -109, -88, -106, -32)
+
+[node name="hand" parent="Monster/body" index="3"]
+polygon = PackedVector2Array(166, -312, 192, -267, 201, -302, 184, -322)
+
+[node name="face" parent="Monster/body" index="4"]
+polygon = PackedVector2Array(-77, -187, -95, -208, -81, -236, -81, -256, -60, -271, -43, -270, -35, -275, -17, -268, -5, -239, -2, -214, -10, -187)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Monster"]
