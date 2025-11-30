@@ -66,6 +66,10 @@ func generate_stars():
 
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_released("reset"):
+		points.clear()
+		generate_stars()
+	
 	for j in range(points.size()):
 		if points[j][4] == "background":
 			if  points[j][3]:
@@ -90,6 +94,3 @@ func _process(delta: float) -> void:
 					points[j][1] = 3.0
 					points[j][3] = true			
 	queue_redraw()
-	if Input.is_action_pressed("down"):
-		points.clear()
-		generate_stars()

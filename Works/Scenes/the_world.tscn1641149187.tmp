@@ -9,7 +9,12 @@ script = ExtResource("1_027bo")
 
 [node name="Player" parent="." instance=ExtResource("2_kp6ox")]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="Polygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-960, 540, 960, 540, 960, -540, -960, -540)
+
+[node name="Polygon2D2" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-960, 540, 960, 540, 960, -540, -960, -540)
 
 [node name="Monster" parent="." instance=ExtResource("3_ychxk")]
@@ -43,7 +48,5 @@ polygon = PackedVector2Array(166, -312, 192, -267, 201, -302, 184, -322)
 
 [node name="face" parent="Monster/body" index="4"]
 polygon = PackedVector2Array(-77, -187, -95, -208, -81, -236, -81, -256, -60, -271, -43, -270, -35, -275, -17, -268, -5, -239, -2, -214, -10, -187)
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [editable path="Monster"]
