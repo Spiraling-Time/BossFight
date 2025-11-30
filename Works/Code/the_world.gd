@@ -61,13 +61,13 @@ func generate_stars():
 						points.append([po, starSize+2, Color(0.0, 0.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0), true, "body"])
 #BACKGROUND
 					elif Geometry2D.is_point_in_polygon(po, poly1.polygon) && i % 5 == 0 && j % 5 == 0:
-						points.append([po, starSize, Color(randi_range(5,10)/10.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0, 1.0), true, "backward"])
+						points.append([po, starSize, Color(randi_range(5,10)/10.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0, 1.0), true, "background"])
 	timer.start()
 
 
 func _on_timer_timeout() -> void:
 	for j in range(points.size()):
-		if points[j][4] == "backward":
+		if points[j][4] == "background":
 			if  points[j][3]:
 				points[j][1] += 0.1
 				if points[j][1] >= 4.0:
