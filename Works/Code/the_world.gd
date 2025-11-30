@@ -90,3 +90,6 @@ func _process(delta: float) -> void:
 					points[j][1] = 3.0
 					points[j][3] = true			
 	queue_redraw()
+	if Input.is_action_pressed("down"):
+		points.clear()
+		generate_stars()
