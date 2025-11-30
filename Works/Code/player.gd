@@ -31,12 +31,12 @@ func _physics_process(delta: float) -> void:
 		#dir.y = move_toward(dir.y, 0, 0.1)
 	#velocity = speed*dir
 	#move_and_slide()
-	prev_pos = position
+	prev_pos = global_position
 	position = get_global_mouse_position()
-	detect.target_position = prev_pos
+	detect.target_position = prev_pos - global_position
 	detect.force_raycast_update()
 	
-	#if global_position: #&& velocity != Vector2.ZERO:
-	#	if detect.is_colliding():
-	world.erase_points.append(global_position)
-	
+	if global_position: #&& velocity != Vector2.ZERO:
+		if detect.is_colliding():
+			world.line_points.append([prev_pos, global_position])
+			print("draw")

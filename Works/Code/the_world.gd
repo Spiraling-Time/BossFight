@@ -4,6 +4,7 @@ var gridY: int = 270#250#1080/4
 var size: int = 5
 var offset: Vector2 = Vector2(gridX*size/2, gridY*size/2)
 var points: Array = []
+var line_points: Array = []
 var erase_points:Array = []
 #BACKGROUND
 @onready var poly1 = $Polygon2D
@@ -26,7 +27,8 @@ func _ready() -> void:
 func _draw() -> void:
 	for i in range(points.size()):
 		draw_circle(points[i][0], points[i][1], points[i][2])
-	draw_polyline(erase_points, Color.BLACK, 10, true)
+	for i in range(line_points.size()):
+		draw_line(line_points[i][0], line_points[i][1], Color.BLACK, 10, true)
 
 func in_main_part(i: int, j: int, k: int, l: int):
 	if (i % k == 0 && i > gridX/2 -65 && i < gridX/2 +65) && (j % l == 0 && j > gridY/2 -100 && j < gridY/2 +100): return true
@@ -71,6 +73,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("reset"):
 		points.clear()
 		erase_points.clear()
+		line_points.clear()
 		generate_stars()
 	
 	for j in range(points.size()):

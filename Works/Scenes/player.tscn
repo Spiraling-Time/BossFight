@@ -11,3 +11,5 @@ position = Vector2(0, 25)
 texture = ExtResource("2_s2sck")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+collide_with_bodies = false
