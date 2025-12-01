@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://chilednwy7rcm"]
+[gd_scene load_steps=9 format=3 uid="uid://chilednwy7rcm"]
 
 [ext_resource type="Script" uid="uid://c316ms5jws2uh" path="res://Works/Code/the_world.gd" id="1_027bo"]
 [ext_resource type="PackedScene" uid="uid://chd1wdifvggjw" path="res://Works/Scenes/player.tscn" id="2_kp6ox"]
 [ext_resource type="PackedScene" uid="uid://dks5cwkddf0xj" path="res://GameStuff/Scenes/TEST/TESTmonster.tscn" id="3_ychxk"]
+[ext_resource type="Script" uid="uid://dxrpt4asn3lt2" path="res://GameStuff/Code/limb_head.gd" id="4_a885f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3d18"]
+size = Vector2(124, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3414n"]
+size = Vector2(124, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnrk"]
+size = Vector2(10, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lpor"]
+size = Vector2(10, 100)
 
 [node name="theWORLD" type="Node2D"]
 script = ExtResource("1_027bo")
@@ -43,6 +56,33 @@ polygon = PackedVector2Array(166, -312, 192, -267, 201, -302, 184, -322)
 
 [node name="face" parent="Monster/body" index="4"]
 polygon = PackedVector2Array(-77, -187, -95, -208, -81, -236, -81, -256, -60, -271, -43, -270, -35, -275, -17, -268, -5, -239, -2, -214, -10, -187)
+
+[node name="limbHead" type="Node2D" parent="Monster"]
+script = ExtResource("4_a885f")
+
+[node name="side1" type="Area2D" parent="Monster/limbHead"]
+position = Vector2(-40, -183)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/limbHead/side1"]
+shape = SubResource("RectangleShape2D_n3d18")
+
+[node name="side2" type="Area2D" parent="Monster/limbHead"]
+position = Vector2(-40, -280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/limbHead/side2"]
+shape = SubResource("RectangleShape2D_3414n")
+
+[node name="side3" type="Area2D" parent="Monster/limbHead"]
+position = Vector2(-107, -232)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/limbHead/side3"]
+shape = SubResource("RectangleShape2D_fcnrk")
+
+[node name="side4" type="Area2D" parent="Monster/limbHead"]
+position = Vector2(27, -232)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/limbHead/side4"]
+shape = SubResource("RectangleShape2D_2lpor")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
