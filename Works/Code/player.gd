@@ -1,7 +1,6 @@
 extends CharacterBody2D
 var dir = Vector2.ZERO
 var speed = 400
-@onready var detect = $RayCast2D
 #BACKGROUND
 @onready var poly1 = $"../Polygon2D"
 #BODY
@@ -33,10 +32,7 @@ func _physics_process(delta: float) -> void:
 	#move_and_slide()
 	prev_pos = global_position
 	position = get_global_mouse_position()
-	detect.target_position = prev_pos - global_position
-	detect.force_raycast_update()
 	
 	if global_position: #&& velocity != Vector2.ZERO:
-		if detect.is_colliding():
-			world.line_points.append([prev_pos, global_position])
-			print("draw")
+		world.line_points.append([prev_pos, global_position])
+		print("draw")
