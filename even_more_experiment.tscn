@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3oaligksb6ye"]
+
+[ext_resource type="Shader" uid="uid://7h2p0rct3so5" path="res://Shaders/stars.gdshader" id="1_saykm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n0sa"]
+shader = ExtResource("1_saykm")
+
+[node name="even_more_experiment" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="rectangle" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_2n0sa")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
