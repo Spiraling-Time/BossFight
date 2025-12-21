@@ -7,8 +7,8 @@ float circle(vec2 i1, vec2 i2, float s){
 }
 
 void fragment() {
-	vec2 st = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
-	float finalcircle = circle(st, vec2(0.5,0.5), 0.05);
+	vec2 st = UV.xy;
+	float finalcircle = circle(st, vec2(0.5,0.3), 0.05);
 	COLOR = vec4(finalcircle,1.0,abs(sin(TIME)), 1.0);
 }
 //void light() {
