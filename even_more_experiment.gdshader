@@ -1,11 +1,14 @@
 shader_type canvas_item;
-uniform vec2 circles[64];
+uniform vec3 circles[64];
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
-
+float circle(vec2 i1st, vec2 i2, float s){
+    return step(distance(i1st, i2), s);
+}
 void fragment() {
-	COLOR = vec4(circles[0].x, 1.0, 1.0, 1.0);
+	vec2 st = UV;
+	COLOR = vec4(circle(st, circles[0].xy, circles[0].z), 1.0, 1.0, 1.0);
 }
 
 //void light() {

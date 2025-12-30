@@ -4,8 +4,9 @@ extends Node2D
 var gridX: int = 480#150#1920/4
 var gridY: int = 270#250#1080/4
 var size: int = 5
+var center = Vector2(1920/1080*.5, 1920/1080*.5)
 var offset: Vector2 = Vector2(gridX*size/2, gridY*size/2)
-var points: Array = [Vector2(0.0, 0.0)]
+var points: Array = [Vector3(center.x, center.y*0.5 ,0.001)]
 @onready var r = $CanvasLayer/rectangle.material
 
 func _ready() -> void:
