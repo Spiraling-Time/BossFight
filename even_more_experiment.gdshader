@@ -1,5 +1,5 @@
 shader_type canvas_item;
-uniform vec3 circles[5706];
+uniform vec3 circles[1024];
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
@@ -10,8 +10,8 @@ float circle(vec2 i1st, vec2 i2, float s){
 void fragment() {
 	vec2 st = UV;
 	float total;
-	for (int i = 0; i < 5706; i++) {
-    	total += circle(st, circles[i].xy, circles[i].z+circles[i].z);
+	for (int i = 0; i < 1024; i++) {
+    	total += circle(st, circles[i].xy, circles[i].z+circles[i].z*abs(sin(TIME))/2.0);
 	}
 	COLOR = vec4(total, 1.0, 1.0, 1.0);
 }
