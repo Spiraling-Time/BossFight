@@ -13,7 +13,7 @@ void fragment() {
 	for (int i = 0; i < 1024; i++) {
     	total += circle(st, circles[i].xy, circles[i].z+circles[i].z*abs(sin(TIME))/2.0);
 	}
-	COLOR = vec4(total, 1.0, 1.0, 1.0);
+	COLOR = vec4(total, abs(sin(TIME)), 1.0, 1.0);
 }
 
 //void light() {
