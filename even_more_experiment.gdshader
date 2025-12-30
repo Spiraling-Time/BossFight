@@ -6,9 +6,14 @@ void vertex() {
 float circle(vec2 i1st, vec2 i2, float s){
     return step(distance(i1st, i2), s);
 }
+
 void fragment() {
 	vec2 st = UV;
-	COLOR = vec4(circle(st, circles[0].xy, circles[0].z), 1.0, 1.0, 1.0);
+	float total;
+	for (int i = 0; i < 1; i++) {
+    	total += circle(st, circles[i].xy, circles[i].z);
+	}
+	COLOR = vec4(total, 1.0, 1.0, 1.0);
 }
 
 //void light() {
