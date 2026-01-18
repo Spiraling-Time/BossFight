@@ -9,6 +9,7 @@ var center = fakeCenter*Vector2(1.0, 0.555)
 var offsize: float = size*10
 var offset: Vector2 = Vector2(gridX*offsize/2, gridY*offsize/2)
 var points: Array# = [Vector3(fakeCenter.x, fakeCenter.y*0.555 ,0.001)]
+var colors: Array
 @onready var r = $CanvasLayer/rectangle.material
 
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	generate_stars()
 	#print(points)
 	r.set_shader_parameter("circles", points)
+	r.set_shader_parameter("colors", colors)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
@@ -32,3 +34,4 @@ func generate_stars():
 					#var starSize = 2+randi_range(-1, 1)+size/2
 					#points.append(Vector3(center.x*(i*0.01-offset.x), center.y*(j*0.01-offset.y), 0.01))
 					points.append(Vector3(i*offsize-offset.x+center.x+(offsize*randi_range(-2, 2)), j*offsize-offset.y+center.y+(offsize*randi_range(-2, 2)), size+randi_range(-1,1)*size/20))
+					colors.append(Vector3(randi_range(5,10)/10.0, randi_range(5,10)/10.0, randi_range(5,10)/10.0))
