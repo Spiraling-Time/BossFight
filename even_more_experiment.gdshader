@@ -1,6 +1,6 @@
 shader_type canvas_item;
-uniform vec3 circles[1024];
-uniform vec3 colors[1024];
+uniform vec3 circles[960];
+uniform vec3 colors[960];
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
